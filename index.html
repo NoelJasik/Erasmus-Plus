@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erasmus</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/headers.css">
+    <link rel="stylesheet" href="styles/background.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <button onclick="selectDay(0)">Home</button>
+            <button onclick="selectDay(1)">1st Workweek</button>
+            <button onclick="selectDay(2)">1st Weekend</button>
+            <button onclick="selectDay(3)">2nd Workweek</button>
+            <button onclick="selectDay(4)">2nd Weekend</button>
+        </nav>
+    </header>
+    <main id="main">
+        <h1 id="header">Erasmus+ blog</h1>
+        <article>
+            <span id="content">
+                <p>Thanks to the 2023 edition of the Erasmus program, me and a bunch of other students from our school, 
+                    traveled abroad to a german town Schkeuditz to learn new things, connect with new people and cultures and most importantly
+                    get more work experience and become more employable, so that we can pay higher taxes in the future.            </p>
+                    <p>On this blog you will be able to learn a thing or two about my experience during the Erasmus+ program.</p>
+                </span>
+        </article>
+    </main>
+    <footer>
+        @2023 <a href="https://noeldev.xyz">Noel Jasik</a>
+    </footer>
+    <div class="background" id="bg">
+       <img class="stars" src="https://upload.wikimedia.org/wikipedia/commons/9/93/European_stars.svg"></img>
+    </div>
+</body>
+<script src="js/articleHandler.js"></script>
+</html>

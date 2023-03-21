@@ -1,0 +1,22 @@
+/* SCSS RGB */
+$bg-dark: #1c1b1f;
+$bg-medium: #25242c;
+$bg-bright: #29292e;
+$font: #c5c4c5;
+$highlight: #4236f5;
+$semi-highlight: #4336f538;
+
+header {
+    background-color: $semi-highlight;
+    width: 100%;
+    nav {
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    box-shadow: 0px 0px 5px 4px $semi-highlight;
+}
