@@ -35,9 +35,10 @@ through out the week. The workshop we worked at wasn’t just for us though, it 
         `<img src="img/img1.jpg" class="pics" ></img>`
     ],
     [
-        "Leipzig",
+        "Leipzig and Berlin",
         [
-            `During the weekend we traveled to Leipzig and had a walk around the beautiful old town square, we had a guide which gave us a tour of the place, and taught us a bit about the history of this city, afterwards we had some free time to roam around, we visited the local zoo, supported local german entrepreneur and his dönner restaurant, we also spent some more time at the club, it was overall really cool.            `
+            `During the weekend we traveled to Leipzig and had a walk around the beautiful old town square, we had a guide which gave us a tour of the place, and taught us a bit about the history of this city, afterwards we had some free time to roam around, we visited the local zoo, supported local german entrepreneur and his dönner restaurant, we also spent some more time at the club, it was overall really cool.`,
+            `Next day we went to Berlin, it was a cool visit, but i much more preffered the trip around leipzig, as we didn't really had free time to explore on our own there, we visited couple building they got there, and some museum like building, but it was a about the technology of tommorow.`
         ], 
         `<img src="img/img2.jpg" class="pics" ></img>`
     ],
@@ -49,9 +50,10 @@ through out the week. The workshop we worked at wasn’t just for us though, it 
         `<img src="img/img3.jpg" class="pics" ></img>`
     ],
     [
-        "Work in progress",
+        "Trip back home",
         [
-            `This shit haven't yet happend`
+            `On the second weekend, our adventure came to an end, we spend the saturday on the bus, and well that would be it.`,
+            `I hope you enjoyed reading my blog, please share it to your friends and family, thank you and aufidern zein!`
         ], 
         `<img src="img/img4.jpg" class="pics" ></img>`
     ],
@@ -66,6 +68,7 @@ function selectDay(_dayNum) {
     clearTimeout(timeout3)
     clearTimeout(timeout4)
     isDynamicBg = index == 0 ? false : true;
+    currentImage = index;
     console.log("isDynamicBg", isDynamicBg)
     loading = true;
     console.log("You will switch to: " + index)
@@ -90,19 +93,31 @@ function selectDay(_dayNum) {
 function clamp(_num, _min, _max)
 {
     let res = _num;
-    if(_num < _min || _num > _max)
+    if(_num < _min || _num >= _max)
     {
         res = _min;
     }
     return res;
 }
 
+function rollNumber(_num, _min, _max)
+{
+ let res = Math.floor(Math.random() * (_max - _min) + _min); 
+ console.log("You rolled: " + res + " and before you were on: " + _num)
+ if (res == _num)
+ {
+    console.log("repeated pic")
+    res += 1;
+ }  
+ res = clamp(res, _min, _max)
+ return res;
+}
+
 function dynamicBg()
 {
     if(loading)
     return
-    currentImage++;
-    currentImage = clamp(currentImage, 1, 11)
+    currentImage = rollNumber(currentImage, 1, 24)
 
     timeout1 = setTimeout(()=>{
         bg.className = "background-transition";
